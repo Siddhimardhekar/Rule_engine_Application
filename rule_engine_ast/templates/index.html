@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine Application</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .result {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rule Engine Application</h1>
+
+        <div class="section">
+            <div class="section-title">Create Rule</div>
+            <textarea class="input-field" placeholder='{ "rule_string": "..." }'></textarea>
+            <button class="button" onclick="createRule()">Create Rule</button>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Combine Rules</div>
+            <textarea class="input-field" placeholder='{ "rules": ["rule1", "rule2", ...] }'></textarea>
+            <button class="button" onclick="combineRules()">Combine Rules</button>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Combined AST Result</div>
+            <div class="result" id="result"></div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">Evaluate Rule</div>
+            <input class="input-field" placeholder="Rule ID" id="ruleId" />
+            <textarea class="input-field" placeholder='{ "data": { ... } }' id="data"></textarea>
+            <button class="button" onclick="evaluateRule()">Evaluate Rule</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
