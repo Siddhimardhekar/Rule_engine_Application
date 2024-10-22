@@ -21,27 +21,11 @@ Edit
 Copy code
 { "rule_string": "age > 30 AND department = 'Sales'" }
 Combine Rules:
-
-json
-
-Verify
-
-Open In Editor
-Edit
-Copy code
 {
   "salary > 50000",
   "age > 30"
 }
 Evaluate Rule:
-
-json
-
-Verify
-
-Open In Editor
-Edit
-Copy code
 {
   "rule_id": 1,
   "data": {
@@ -62,6 +46,6 @@ Open your browser and visit http://localhost:3000.
 Development
 Make your changes to the code.
 Run the application: node index.js
-Open your browser and visit http://localhost:3000.
+Open your browser and visit http://localhost:5000.
 Contribution
 Contributions are welcome! Please feel free to submit pull requests or open issues.
