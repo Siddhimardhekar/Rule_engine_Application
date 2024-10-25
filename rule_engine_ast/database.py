@@ -4,8 +4,7 @@ def init_db():
     conn = sqlite3.connect('rules.db')
     c = conn.cursor()
     # Create tables as needed
-    c.execute('''CREATE TABLE IF NOT EXISTS rules
-                 (id INTEGER PRIMARY KEY, rule_string TEXT)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS rules (id INTEGER PRIMARY KEY, rule_string TEXT)''')
     conn.commit()
     conn.close()
 

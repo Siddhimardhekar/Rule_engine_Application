@@ -66,26 +66,24 @@
 
         <div class="section">
             <div class="section-title">Create Rule</div>
-            <textarea class="input-field" placeholder='{ "rule_string": "..." }'></textarea>
+            <textarea class="input-field" id="createRuleInput" placeholder='{"rule_string": "department = '\''Sales'\''"}'></textarea>
             <button class="button" onclick="createRule()">Create Rule</button>
+            <div class="result" id="createRuleResult"></div>
         </div>
 
         <div class="section">
             <div class="section-title">Combine Rules</div>
-            <textarea class="input-field" placeholder='{ "rules": ["rule1", "rule2", ...] }'></textarea>
+            <textarea class="input-field" id="combineRulesInput" placeholder='["department = '\''Sales'\''", "location = '\''New York'\'"]'"></textarea>
             <button class="button" onclick="combineRules()">Combine Rules</button>
-        </div>
-
-        <div class="section">
-            <div class="section-title">Combined AST Result</div>
-            <div class="result" id="result"></div>
+            <div class="result" id="combineRulesResult"></div>
         </div>
 
         <div class="section">
             <div class="section-title">Evaluate Rule</div>
             <input class="input-field" placeholder="Rule ID" id="ruleId" />
-            <textarea class="input-field" placeholder='{ "data": { ... } }' id="data"></textarea>
+            <textarea class="input-field" placeholder='{"data": {"department": "Sales", "location": "New York"}}' id="evaluateRuleInput"></textarea>
             <button class="button" onclick="evaluateRule()">Evaluate Rule</button>
+            <div class="result" id="evaluateRuleResult"></div>
         </div>
     </div>
 

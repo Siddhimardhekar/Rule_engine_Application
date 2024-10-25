@@ -1,14 +1,26 @@
+# class Node:
+#     def __init__(self, type, left=None, right=None):
+#         self.type = type
+#         self.left = left
+#         self.right = right
+
+#     def to_dict(self):
+#         return {
+#             "type": self.type,
+#             "left": self.left,
+#             "right": self.right
+#         }
+#         # In your ast_node.py
 class Node:
-    def __init__(self, type, left=None, right=None, value=None):
-        self.type = type          # "operator" or "operand"
-        self.left = left          # Reference to left child Node
-        self.right = right        # Reference to right child Node
-        self.value = value        # Optional value for operand nodes
+    def __init__(self, type, left=None, right=None):
+        self.type = type
+        self.left = left
+        self.right = right
 
     def to_dict(self):
+        # Convert the Node to a dictionary that can be serialized to JSON
         return {
             "type": self.type,
-            "left": self.left.to_dict() if self.left else None,
-            "right": self.right.to_dict() if self.right else None,
-            "value": self.value
+            "left": self.left.to_dict() if isinstance(self.left, Node) else self.left,
+            "right": self.right.to_dict() if isinstance(self.right, Node) else self.right
         }
